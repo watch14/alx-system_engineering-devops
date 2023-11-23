@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-# hour
-hours=0
+# 12 hours and 59 minutes
 
-while [ $hours -le 12 ]; do
-    minutes=1
-    while [ $minutes -le 59 ]; do
-        printf "%02d:%02d\n" $hours $minutes
-        ((minutes++))
+h=0
+while [ $h -lt 13 ]
+do
+    echo "Hour: $h"
+    m=1
+    while [ $m -lt 60 ]
+    do
+        echo $m
+	let m+=1
     done
-    ((hours++))
+    let h+=1
 done
-
