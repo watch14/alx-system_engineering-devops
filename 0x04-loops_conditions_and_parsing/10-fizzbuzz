@@ -15,5 +15,5 @@ do
 	else
 		echo "$x"
 	fi
-	let x+=1
+	((x++))
 done
