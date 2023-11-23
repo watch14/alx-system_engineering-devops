@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# 12 hours and 59 minutes
-
+# 12 hours 59 minutes
 h=0
 while [ $h -lt 13 ]
 do
