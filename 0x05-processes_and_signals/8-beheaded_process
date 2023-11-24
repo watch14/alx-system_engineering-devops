@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Beheaded process
-pid=$(pgrep -f "7-highlander")
-pkill "$pid"
+pkill -f "7-highlander"
