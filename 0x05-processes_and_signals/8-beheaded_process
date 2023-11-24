@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 # Beheaded process
-pid=$(pgrep -f "8-beheaded_process")
-
-if [ -n "$pid" ]; then
-	kill "$pid"
-fi
+pkill -f "bash ./7-highlander"
