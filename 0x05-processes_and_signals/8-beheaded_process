@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# kill 4
-pid=$(pgrep -f "4-to_infinity_and_beyond")
+# Beheaded process
+pid=$(pgrep -f "8-beheaded_process")
 
 if [ -n "$pid" ]; then
 	kill "$pid"
