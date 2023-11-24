@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# kill 4
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+if [ -n "$pid" ]; then
+    # Use kill to terminate the process
+    kill "$pid"
+fi
