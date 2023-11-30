@@ -2,4 +2,4 @@
 
 #listening ports
 
-netstat -lp
+sudo netstat -lp
