@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-# Change my IP
+# Change IP
+cp /etc/hosts ~/hosts.updated
 
+echo "127.0.0.2        localhost" > ~/hosts.updated
+echo "8.8.8.8             facebook.com" >> ~/hosts.updated
 
+sudo cp -f ~/hosts.updated /etc/hosts
