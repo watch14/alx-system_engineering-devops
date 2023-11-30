@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#display ping of an ip
+
+if [ $# -eq 0 ]; then
+	echo "Usage: $0 <hostname or IP address>"
+	exit 1
+fi
+ping -c 5 $1
