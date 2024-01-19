@@ -1,3 +1,4 @@
+#!/usr/bin/pup
 # Creates a File .pp
 file { '/tmp/school':
   path    => '/tmp/school',
