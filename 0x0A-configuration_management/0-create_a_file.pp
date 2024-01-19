@@ -1,4 +1,4 @@
-# Creates a file
+# Creates a File .pp
 file { '/tmp/school':
   path    => '/tmp/school',
   mode    => '0744',
