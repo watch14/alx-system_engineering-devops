@@ -1,13 +1,17 @@
-# 1-install_a_package.pp
+#!/usr/bin/pup
+# flask
+package { 'python3-pip':
+  ensure => installed,
+}
 
-# X
-package { 'Flask':
+package { 'flask':
   ensure   => '2.1.0',
-  provider => 'pip3',
+  provider => 'pip',
   require  => Package['python3-pip'],
 }
 
-# pack
-package { 'python3-pip':
-  ensure => 'installed',
+package { 'werkzeug':
+  ensure   => '2.0.1',
+  provider => 'pip',
+  require  => Package['python3-pip'],
 }
