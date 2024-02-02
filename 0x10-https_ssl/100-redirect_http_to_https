@@ -33,20 +33,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend watch-frontend
+frontend watch-14-frontend
         bind *:80
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http
-        default_backend watch-backend
+        default_backend watch-14-backend
 
-frontend watch-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/watch-14.tech.pem
+frontend watch-14-frontend-https
+        bind *:443 ssl crt /etc/haproxy/certs/www.watch-14.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend watch-backend
+        default_backend watch-14-backend
 
-
-backend watch_backend
+backend watch-14-backend
         balance roundrobin
         server 484035-web-01 52.91.147.124:80 check
         server 484035-web-02 107.21.183.54:80 check
