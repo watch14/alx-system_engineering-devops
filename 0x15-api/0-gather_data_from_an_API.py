@@ -26,7 +26,7 @@ if __name__ == "__main__":
             completed.append(todo_item["title"])
             done += 1
 
-    print("Employee {} is done with tasks ({}/{})".format(
+    print ("Employee {} is done with tasks ({}/{})".format(
         user_data['name'], done, tasks))
     for i in completed:
         print (f"\t {i}")
