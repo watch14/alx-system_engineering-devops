@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ API TODOS """
 import requests
-import json
 from sys import argv
 
 user_id = argv[1]
@@ -14,8 +13,6 @@ todo_resp = requests.get(todo_link)
 
 user_data = user_resp.json()
 todo_data = todo_resp.json()
-
-print(user_data["name"])
 
 tasks = 0
 done = 0
