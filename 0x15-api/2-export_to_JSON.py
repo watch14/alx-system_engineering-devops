@@ -21,9 +21,10 @@ if __name__ == "__main__":
     tasks = []
     for todo in todo_data:
         tasks.append(
-                {"task": todo["title"], \
-                        "completed": todo["completed"], \
-                        "username": username}
+                {
+                    "task": todo["title"],
+                    "completed": todo["completed"],
+                    "username": username}
                 )
 
     json_data = {
