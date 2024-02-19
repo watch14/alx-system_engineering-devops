@@ -24,8 +24,8 @@ for todo_item in todo_data:
     tasks += 1
 
     if todo_item["completed"]:
-            completed.append(todo_item["title"])
-            done += 1
+        completed.append(todo_item["title"])
+        done += 1
 
 print (f"Employee {user_data['name']} is done with tasks ({done}/{tasks}):")
 for i in completed:
