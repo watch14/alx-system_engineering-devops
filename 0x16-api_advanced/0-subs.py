@@ -13,5 +13,4 @@ def number_of_subscribers(subreddit):
     headers = {'User-Agent': 'ALX aAPI task 0'}
     resp = requests.get(link, headers=headers, allow_redirects=False)
 
-
     return resp.json()['data']["subscribers"]
