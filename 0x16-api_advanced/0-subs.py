@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-""" API Subreddit """
-import requests
+"""Module for task 0"""
 
 
 def number_of_subscribers(subreddit):
-    """
-    nbr of subs
-    """
-    link = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {'User-Agent': 'ALX aAPI task 0'}
-    resp = requests.get(link, headers=headers, allow_redirects=False)
+    """Queries the Reddit API and returns the number of subscribers
+    to the subreddit"""
+    import requests
 
-    if resp.status_code >= 300:
+    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
         return 0
 
-    return resp.json()['data']["subscribers"]
+    return sub_info.json().get("data").get("subscribers")
