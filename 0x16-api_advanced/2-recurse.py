@@ -15,20 +15,25 @@ def recurse(subreddit, hot_list=[], count=0, after=None):
                         headers=headers,
                         allow_redirects=False)
 
-    if resp.status_code >= 400:
+    if not resp.ok:
+        if len(hot_list) == 0:
+            return None
+        else:
+            return hot_list
+
+    data = resp.json()['data']
+    for post in data['children']:
+        hot_list.append(post['data']['title'])
+    
+    after = data['after']
+    dist = data['dist']
+    if (after):
+        recurse(subreddit, hot_list, count + dist, after)
+
+    if len(hot_list) == 0:
         return None
-
-    results = resp.json().get("data")
-    after = results.get("after")
-    count += results.get("dist")
-
-    for post in results.get("children"):
-        hot_list.append(post.get("data").get("title"))
-
-    if after is not None:
-        return recurse(subreddit, hot_list, after, count)
-
-    return hot_list
+    else:
+        return hot_list
 
 
 result = recurse("programming")
