@@ -24,7 +24,7 @@ def recurse(subreddit, hot_list=[], count=0, after=None):
     data = resp.json()['data']
     for post in data['children']:
         hot_list.append(post['data']['title'])
-    
+
     after = data['after']
     dist = data['dist']
     if (after):
