@@ -23,12 +23,8 @@ server {
     	}
 
         location / {
-                proxy_pass https://127.0.0.1:5003/2-hbnb;
-        }
-
-        location /static {
-                alias web_dynamic/static/;
-        }
+                proxy_pass http://localhost:5003/2-hbnb;
+	}
 
 	error_page 404 /404.html;
         location /404 {
